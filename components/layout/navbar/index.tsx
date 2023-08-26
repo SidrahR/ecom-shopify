@@ -1,4 +1,3 @@
-import Cart from 'components/cart';
 import OpenCart from 'components/cart/open-cart';
 import LogoSquare from 'components/logo-square';
 import { getMenu } from 'lib/shopify';
@@ -10,7 +9,7 @@ import Search from './search';
 const { SITE_NAME } = process.env;
 
 export default async function Navbar() {
-  const menu = await getMenu('next-js-frontend-header-menu');
+  const menu = await getMenu('main-menu');
 
   return (
     <nav className="relative flex items-center justify-between p-4 lg:px-6">
@@ -45,7 +44,7 @@ export default async function Navbar() {
         </div>
         <div className="flex justify-end md:w-1/3">
           <Suspense fallback={<OpenCart />}>
-            <Cart />
+            {/* <Cart /> */}
           </Suspense>
         </div>
       </div>
